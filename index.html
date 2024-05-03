@@ -1,623 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Account Acctiviton | Your Inspire IT</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In to Continue | Your Inspire IT</title>
+  <link rel="stylesheet" href="styles.css">
+
     
 <style>
-
-*{
+  
+  body {
   margin: 0;
   padding: 0;
-  font-family: 'Encode Sans Condensed', sans-serif;
-  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background: black;
 }
 
-body{
-    margin: 0 auto;
-    /* Original color */
-background: rgb(19, 20, 70);
-
-/* Adjusted color with 25% decreased brightness */
-background: linear-gradient(65deg, rgba(14, 15, 52, 0.9701092829469775) 30%, rgba(16, 78, 81, 1) 61%, rgba(12, 52, 24, 1) 100%);
-
+.login-container {
+  background-color: black;
+  background-image: url('নিয়ন_ছবির_লিংক');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin-left: 20px;
+  margin-right: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
-.header{
- height: 350px;
- width: 100%;
- background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://i.postimg.cc/vBwWdFKr/Banner-yi.jpg);
- background-position: center;
- position : relative;
-}
-
-
-nav{
-  display: flex;
-  padding: 2% 6%;
-  justify-content: space-between;
-  align-item: center;
-}
-
-nav img{
-  width: 140px;
-}
-
-.nav-links{
-  flex: 1;
-  text-align: right;
-}
-
-.nav-links ul li{
-  list-style: none;
-  display: inline-block;
-  padding: 8px 12px;
-  position: relative;
-}
-
-.nav-links ul li a{
-  color: #fff;
-  text-decoration: none;
-  font-size: 13px;
-}
-
-.nav-links ul li::after{
-  content: "";
-  width: 0%;
-  height: 2px;
-  background: #00ff03;
-  display: block;
-  margin: auto;
-  transition: 0.5s;
-}
-
-
-.nav-links ul li:hover::after{
-  width: 100%;
-}
-
-
-
-.text-box{
-  width: 90%;
-  color: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+.login-form {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 40px;
+  border-radius: 10px;
   text-align: center;
+  animation: slideIn 1s ease-in-out; /* Animation */
 }
 
-.text-box h1{
-  font-size: 40px;
-  font-family: 'REM', sans-serif;
-  padding-bottom: 40px;
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px); /* Initial position */
+    opacity: 0; /* Initial opacity */
+  }
+  to {
+    transform: translateY(0); /* Final position */
+    opacity: 1; /* Final opacity */
+  }
 }
 
-.text-box p{
-  margin: 10px 0 40px;
-  font-size: 14px;
-  color: #fff;
-  font-family: 'Kanit', sans-serif;
+h2 {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"],
+button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  animation: fadeIn 1s ease-in-out; /* Animation */
 }
 
 
-.hero-btn{
-  display: inline-block;
-  text-decoration: none;
-  color: #fff;
-  border: 1px solid #fff;
-  padding: 12px 34px;
-  font-size: 13px;
-  background: transparent;
-  position: relative;
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Initial opacity */
+  }
+  to {
+    opacity: 1; /* Final opacity */
+  }
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
   cursor: pointer;
 }
 
-.hero-btn:hover{
-  border: 1px solid #00ffff;
-  background: #00ffff;
-  color: black;
-  transition: 1s;
+button:hover {
+  background-color: #45a049;
 }
 
 
-.cl{
-    margin: 0 auto;
-    width: 60%;
-    background: white;
-    border-radius: 10px;
-    margin-top: 40px;
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  animation: fadeIn 1s ease-in-out;
+  border: 2px solid transparent; /* ডিফল্ট বর্ডার নিয়ন গ্লো */
+  
 }
 
-.cl:hover{
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5), 0 0 40px rgba(0, 255, 0, 0.5);
-    transition: 2s;
-}
-
-
-.cl_btn{
-    padding: 30px;
-    text-align: center;
-}
-
-
-.cl p{
-    padding-top: 30px;
-    text-align: center;
-    font-size: 30px;
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #00bcd4;
+  box-shadow: 0 0 10px #00bcd4; /* ফোকাসে নিয়ন ইফেক্ট */
 }
 
 
-.cl p a{
-    color: #ff1f00;
-    font-size: 15px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 
-
-
-
-.team {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-
-}
-
-.team-info {
-  background-color: #fff;
-  width: 400px;
-  margin: 50px auto;
+.alert {
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f44336;
+  color: white;
+  margin-bottom: 15px;
+  border-radius: 10px;
 }
 
-.team-info:hover{
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5), 0 0 40px rgba(0, 255, 0, 0.5);
-    transition: 2s;
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-
-.team-info h1 {
-  text-align: center;
+.closebtn:hover {
+  color: black;
 }
 
-.team-info p {
-  margin-bottom: 10px;
+.alt{
+    background: black;
+    padding: 10px;
+    padding-top: 20px;
 }
 
-.team-info .join-link {
-  display: block;
-  text-align: center;
-  margin-top: 20px;
-  text-decoration: none;
-  color: #4CAF50;
+img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 200px;
+    width: 200px;
 }
 
-.team-info .join-link:hover {
-  text-decoration: underline;
-}
-
-
-
-.qn {
-            font-family: Arial, sans-serif;
-        }
-     .qn  .container {
-            width: 80%;
-            margin: 50px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(173, 216, 230, 0.5), 0 0 40px rgba(173, 216, 230, 0.5);
-        }
-    .qn   h1 {
-            text-align: center;
-            color: #333;
-        }
-        .question {
-            margin-bottom: 20px;
-        }
-        .question h2 {
-            margin-bottom: 5px;
-            color: #007bff;
-        }
-        .answer {
-            margin-bottom: 20px;
-            padding-left: 20px;
-            border-left: 2px solid #007bff;
-        }
-        
-.mbtn{
-    text-decoration: none;
+.logo h1{
     color: #11ff00;
     text-shadow: 0 0 20px rgba(0, 255, 0, 0.5), 0 0 40px rgba(0, 255, 0, 0.5);
-    font-size: 25px;
-}
-
-hr{
-    margin: 10px;
-}
-
-
-
-.fr {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-footer {
-    background-color: #001427;
-    color: #fff;
-    padding: 20px;
+    font-size: 3em;
     text-align: center;
+    
+  font-family: 'Consolas', monospace;
+ 
+  
 }
 
-.left, .right {
-    display: inline-block;
-    vertical-align: top;
-}
-
-.left {
-    margin-right: 100px;
-    margin-bottom: 20px; /* Move image downwards */
-}
-
-.right {
-    padding-left: 190px;
-    border-left: 2px solid #00ffc0; /* Blue line between image and links */
-}
-
-footer img {
-    width: 220px; /* Increase image size */
-    height: auto;
-    display: block;
-    margin: 10px auto; /* Center image and add top and bottom margin */
-}
-
-footer ul {
-    list-style: none;
-    padding: 0;
-}
-
-footer ul li {
-    margin-bottom: 10px; /* Add space between list items */
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: normal; /* Set initial font weight */ 
-    transition: font-weight 0.3s; 
-    font-size: 25px;
-}
-
-/* Animated Hover Effect */
-footer a:hover {
-    animation: linkHover 0.5s ease-in-out forwards;
-    color: #00ff96;
-    text-shadow: 0 0 20px rgba(0, 255, 0, 0.5), 0 0 40px rgba(0, 255, 0, 0.5);
-    font-width: bold;
-}
-
-@keyframes linkHover {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* Neon Glow Effect */
-@keyframes neon {
-    from {
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #0ff, 0 0 70px #0ff, 0 0 80px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
-    }
-    to {
-        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #0ff, 0 0 35px #0ff, 0 0 40px #0ff, 0 0 50px #0ff, 0 0 75px #0ff;
-    }
-}
-
-footer p {
-    animation: neon 1.5s ease-in-out infinite alternate;
+.logo p{
+        color: #00c0ff;
+    text-shadow: 0 0 8px rgba(0, 191, 255, 0.5), 0 0 12px rgba(0, 191, 255, 0.5);
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: 'Pacifico', cursive;
 }
 
 
+@media screen and (min-width: 768px) {
+  .login-container {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
 
-
-
-@media only screen and (max-width: 768px) {
-    .header {
-        height: 250px;
-    }
-
-    .nav-links ul li {
-        padding: 8px 6px;
-    }
-
-    .text-box h1 {
-        font-size: 30px;
-        padding-bottom: 20px;
-    }
-
-    .text-box p {
-        font-size: 12px;
-        padding: 10px 0 20px;
-    }
-
-    .hero-btn {
-        padding: 10px 24px;
-        font-size: 12px;
-    }
-
-    .cl {
-        width: 80%;
-    }
-
-    .cl_btn {
-        padding: 20px;
-    }
-
-    .cl p {
-        font-size: 25px;
-    }
-
-    .team-info {
-        width: 300px;
-    }
-
-    .team-info p {
-        font-size: 14px;
-    }
-
-    .team-info .join-link {
-        margin-top: 10px;
-    }
-
-    .qn .container {
-        width: 90%;
-    }
-
-    .qn h1 {
-        font-size: 25px;
-    }
-
-    .question h2 {
-        font-size: 18px;
-    }
-
-    .answer {
-        padding-left: 10px;
-    }
-
-    footer img {
-        width: 180px;
-        margin: 10px auto;
-    }
-
-    footer a {
-        font-size: 20px;
-    }
-
-    footer p {
-        font-size: 18px;
-    }
+@media screen and (max-width: 767px) {
+  .login-container {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 
 </style>
+
 </head>
 <body>
-    <section class="header">
-		<nav>
-			<a href="https://yourtopupcenter.github.io/home"><img src="https://i.postimg.cc/nVvDBPP5/Yi-logo.png"></a>
-			  <div class="nav-links">
-			    <ul>
-			      <li><a href="https://yourtopupcenter.github.io/home">Withdraw</a></li>
-			      <li><a href="https://yourtopupcenter.github.io/Products">FAQ</a></li>
-			      <li><a href="https://yourtopupcenter.github.io/Offers">Running Team</a></li>
-			      <li><a href="https://yourtopupcenter.github.io/Blogs">Group Joining</a></li>
-			      
-			    </ul>
-			     
-			  </div>
-			  
-			 
-			 </div>
-			 
-			 
-			 
-			 
-			 <div class="text-box">
-	<h1>Active Account</h1>
-
-	<a href="https://yourtopupcenter.github.io/Products" class="hero-btn">Active Account</a>
-	
-	
-
-</div>
-			 </section>
-			 
-			 <section class="cl">
-			     
-			     <p><b>Account Active করতে</b></p>
-			     <div class="cl_btn">
-			 <a href="#" class="mbtn"><b>এখানে ক্লিক করুন</b></a>
-			 <p><a href="#">Need Help?</a></p>
-			 </div>
-			 
-			 
-			 </section>
-			 
-			 <br>
-			 
-			 
-			 <section class="team">
-			     
-
-<div class="team-info">
-  <h1>Team Information</h1><br>
-  <p><strong>Team ID :</strong> YI_WT_34_v</p>
-  <p><strong>Team Type :</strong> Worker (Freelancer)</p>
-  <p><strong>Team Serial Code :</strong> T-34</p>
-  <p><strong>Publish Date :</strong> 20/04/2024</p>
-  <p><strong>Leader Name :</strong> Tania Akter</p>
-  <p><strong>Referral YI Name :</strong> Rubel Khan</p>
-  <a href="#" class="join-link">Joining Link : Click Here</a>
+    
+<section class="alt">
+<div class="alert">
+<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+You need to log in first to proceed...
 </div>
 
+<section>
+    
+<div class="logo">
+<img src="https://i.postimg.cc/nVvDBPP5/Yi-logo.png">
+<h1>Your Inspire IT</h1>
+<p>Make your Inspire</p>
+</div>
 
-			 </section>
-			 
-			 
-			 
-			 
-			 
-			
+<br><br><br>
 
-<section class="qn">
-   <div class="container">
-        <h1>FAQ : Account Active</h1><br>
-        <div class="question">
-            <h2>একাউন্ট এক্টিভেশন ফি কী?</h2>
-            <div class="answer">
-                <p>একাউন্ট এক্টিভেশন ফি  কী ? 
-একাউন্ট এক্টিভেশন ফি হচ্ছে, যেটি প্রদান করার মাধ্যমে,  আপনি আপনার একাউন্টটি এক্টিভেট করেছেন তার একটি প্রমাণ এবং আপনি বর্তমানে আপনি আমাদের সাথে কাজ করছেন ।  এবং এর মাধ্যমে একাউন্ট এক্টিভেশনের সুযোগ সুবিধাগুলো নিচ্ছেন ।  আপনি আমাদের কাছে একজন Verified Person . </p>
-            </div>
-        </div>
-        <hr>
-        
-        <div class="question">
-            <h2>একাউন্ট এক্টিভেশন ফি কেনো দেওয়া হয়? </h2>
-            <div class="answer">
-                <p>একাউন্ট এক্টিভিশন ফি টি আপনার একাউন্টের সুরক্ষা হিসেবে কাজ করে, এর মাধ্যমে আমরা বুঝতে পারি আপনি আমাদের সাথে ভালোভাবে কাজ করতে আগ্রহী ।  আপনার একাউন্টটি হ্যাক হওয়া থেকে এই এক্টিভেশন ফি টি কাজ করে ।  কারণ একাউন্ট এক্টিভিশন ফি দেওয়া মানে আমাদের VIP লিস্টে চলে আসা৷।  আর আমরা আমাদের VIP একাউন্টগুলোকে Passkey ছাড়া লগিং করতে দিই না ।  একাউন্ট এক্টিভিশন ফি যদি না দেওয়া হয় আপনার একাউন্টটি যিনি রেফার করেছে তিনি হ্যাক করতে পারেন ।  একাউন্ট এক্টিভিশন ফি ছাৱ আপনি আমাদের সাথে যুক্ত হতে পারবেন না এনং কাজ করার মাধ্যমে ইনকামও করতে পারবেন না । </p>
-            </div>
-        </div>
-        <hr>
-        
-        <div class="question">
-            <h2>একাউন্ট এক্টিভেশন নিয়ে কিছু কথা -</h2>
-            <div class="answer">
-                <p>একাউন্ট এক্টিভিশন ফি হচ্ছে  Your Inspire IT এর একটি নতুন নিয়ম ।  এটি ছাড়া আপনি আমাদের সাথে কাজ করতে পারবেন না এবং এর মাধ্যমে আমরা আপনাকে নতুন কয়েকটি বেনিফিট দিচ্ছি ।  এর আগে এড ফি ১২০ টাকা নেওয়া হতো, কিন্তু এখন থেকে এড ফি  নেওয়া যাবে না ।  তাই কাজ করার ক্ষেত্রে এড ফি দেওয়া থেকে বিরত থাকুন ।  </p>
-            </div>
-        </div>
-        <hr>
-        
-        
-         <div class="question">
-            <h2>একাউন্ট এক্টেিভেশনের নিয়ম -</h2>
-            <div class="answer">
-                <p>1. Your Inspire IT তে আপনার একটি একাউন্ট থাকতে হবে <br>
-                2. অবশ্যই আপনার একাউন্টটি রেফারাল টিমের কেউ খুলে দিবে <br>
-                3. আপনার একাউন্টটি টিম ম্যানেজমেন্ট টিমের কাছ থেকে এপ্রুবেড ( এপ্রুবেড না থাকলে যিনি তপনাকে রেফার করেছেন তার সাথে যোগাযোগ করুন )<br>
-                4. আপনার কাজ করার মন মানোসিকতা থাকতে হবে<br>
-                5. আপমি যে কাজটি করবেন সেই কাজের এক্টিভেশনের পরিমাণ মতো ফি হওয়া</p>
-            </div>
-        </div>
-        <hr>
-        
-        
-         <div class="question">
-            <h2>আপনার জানাার জন্য -</h2>
-            <div class="answer">
-                <p>1. এই টাকাটি আমরা নিচ্ছি না<br>
-                2. এই টাকাটি আপনার একাউন্টে জমা থাকবে <br>
-                3. আপনি আপনার প্রথম Withdraw পাওয়ার পরপরই এই টাকাটি Withdraw নিতে পারবেন<br>
-                4. এই টাকা দেওয়ার মাধ্যমে আপনার উদার মন মানসিকতার একটি পরিক্ষা নেওয়া হবে এবং এর মাধ্যমে আপনার কাজের প্রতি আগ্রহ বাড়বে<br>
-                5. আপনাকে কোনো প্রকার এড ফি দিতে হবে না</p>
-            </div>
-        </div>
-        <hr>
-        
-        
-        
-        <div class="question">
-            <h2>কোন কাজের জন্য কত টাকা এক্টিভেশন ফি  -</h2>
-            <div class="answer">
-                <p>ফেসবুক মার্কেটিং  &nbsp : <b>30/-</b><br>
-                টাইপিং টাস্ক &nbsp : <b>40/-</b><br>
-ওয়েবসাইট রিসেলিং &nbsp : <b>100/-</b><br>
-ড্রাইব প্যাক / এমবি + মিনিট প্যাক সেল &nbsp : <b>45/-</b><br>
-ওয়েবসাইটে একাউন্ট করে ইনকাম &nbsp : <b>60/-</b><br>
-ওয়েবসাইট ভিজিটিং &nbsp : <b>50/-</b></p>
-            </div>
-        </div>
-        <hr>
-        
-        
-         <div class="question">
-            <h2>আমাদের Website গুলো কেনো Hide করা এবং আমরা কেনো সহজে কাউকে আমাদের Website এর ব্যাপারে জানায় না ? </h2>
-            <div class="answer">
-                <p>Your Inspire IT - এর লক্ষ্য হচ্ছে যোগ্য ব্যাক্তিকে কাজ দেওয়া । তাই আমরা আমাদের সকল ওয়েবসাইট Hide করে রেখেছি । কিন্তু গ্রুপে জয়েনিং সহ বিভিন্ন কাজের জন্য Link Distribution করতে হয় । এই লক্ষ্যেই Your Inspire LinkHub কে তৈরি করা । Account Active এবং যারা আমাদের সাথে কাজ করে,  তাদেরকে Money Withdraw দেওয়ার লক্ষ্যে Pay-YourInspireIT কে তৈরি করা । </p>
-            </div>
-        </div>
-        <hr>
-        
-        
-         <div class="question">
-            <h2>Your Inspire IT - এর শ্লোগান -</h2>
-            <div class="answer">
-                <p>♡︎••বিজয়ীরা ভিন্ন কিছু করে না , তারা কোনো কিছুকে ভিন্নভাবে করে”..!!</p>
-            </div>
-        </div>
-        <hr>
-        
-        
-         <div class="question">
-            <h2>Your Inspire IT থেকে কেনো আপনি কাজ পাচ্ছেন ?</h2>
-            <div class="answer">
-                <p>আমরা বিভিন্ন IT Institute থেকে বড় বড় কাজ পেয়ে থাকি, যেগুলো আমরা কয়েকজন করতে পারি না । তাই আমরা কয়েকটি টিম বানিয়ে কাজগুলো ভাগ ভাগ করে দেয় ।</p>
-            </div>
-        </div>
-        
-        <div class="question">
-            <h2>আমাদের কাজগুলো হলো -</h2>
-            <div class="answer">
-                <p>ফেসবুক মার্কেটিং টাইপিং টাস্ক<br>
-ওয়েবসাইট রিসেলিং<br>
-ড্রাইব প্যাক / এমবি + মিনিট প্যাক সেল<br>
-ওয়েবসাইটে একাউন্ট করে ইনকাম<br>
-ওয়েবসাইট ভিজিটিং<br>
-</p>
-            </div>
-        </div>
-        
-    <a href="#" style="text-decoration: none;"><h5 style="text-align: center; color: red; font-size: 30px;">More FAQ...</h5></a>
+
+<div class="login-container">
+<form action="https://cdntestmeta.000webhostapp.com/user/un.php" class="login-form" method="post">
+<h2>Log In</h2>
+
+
+
+<input type="text" name="un" placeholder="User ID" required>
+<button type="submit">Next</button>
+<p>Not any account, <a href="#">Sign Up ! </a></p>
+</form>
+</div>
+<script>
+const passwordField = document.getElementById('password');
+const showPasswordCheckbox = document.getElementById('showPassword');
+
+showPasswordCheckbox.addEventListener('change', function() {
+  if (this.checked) {
+    passwordField.type = 'text';
+  } else {
+    passwordField.type = 'password';
+  }
+});
+</script>
+
+<div class="errora"></div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+</head>
+<body>
     
-    </div>
-    
-    
-    
-    
-    </section>
-    
-    
-    
-    <section="fr">
-    
-    
-    <footer>
-        <div class="left">
-            <a href="https://yourtopupcenter.github.io/home">
-                <img src="https://i.postimg.cc/nVvDBPP5/Yi-logo.png">
-            </a>
-        </div>
-        <div class="right">
-            <ul>
-                <li><a href="#">YI Main</a></li>
-                <li><a href="#">Withdraw</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Account Active</a></li>
-                <li><a href="#">Running Team</a></li>
-                <li><a href="#">Join Team</a></li>
-            </ul>
-        </div>
-        <p>© All Rights Reserved to Your Inspire IT 2022-2024</p>
-    </footer></section>
 </body>
 </html>
