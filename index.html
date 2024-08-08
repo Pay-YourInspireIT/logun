@@ -254,6 +254,7 @@ color: #00c0ff;
     }
     
     
+    
 
   </style>
 </head>
@@ -267,12 +268,12 @@ color: #00c0ff;
     </div>
 
     <div class="login-container">
-      <form action="https://userinfomaster.000webhostapp.com/yi/un.php" class="login-form" method="post">
-        <h2>Log In</h2>
-        <input type="text" name="un" placeholder="User ID" required>
-        <button type="submit">Next</button>
-        <p>Not any account, <a href="#">Sign Up!</a></p>
-      </form>
+      <form id="loginForm" class="login-form" method="post" onsubmit="return validateForm()">
+  <h2>Log In</h2>
+  <input type="text" id="userId" name="un" placeholder="User ID" required>
+  <button type="submit">Next</button>
+  <p>Not any account, <a href="#">Sign Up!</a></p>
+</form>
     </div>
   </section>
 
@@ -285,8 +286,20 @@ color: #00c0ff;
     window.onload = function() {
       document.getElementById('alert').style.display = 'block';
     };
+    
+      function validateForm() {
+    var userId = document.getElementById("userId").value;
+    if (userId === "YI_T-39_X82" || userId === "YI_T-39_X81" || userId === "YI_T-39_X80") {
+      window.location.href = "https://pay-yourinspireit.github.io/logun/atIbsk/";
+    } else {
+      alert("User ID is Incorrect ! Try Agin.");
+    }
+    return false; // ফর্মটি সাবমিট হতে বাধা দেয়
+  }
   </script>
 
   <div class="errora"></div>
+  
+  
 </body>
-</html>
+    </html>
